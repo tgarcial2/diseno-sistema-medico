@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% load static %}
+{% block headcss %}
+<link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+{% endblock %}
+{% block main %}
+<div class="container" id="inicio">
+    <div class="row">
+            <div class="col-12 align-self-center form-group text-dark ">
+                <h1 class="text-center"> <span class="material-icons">
+                    book_online
+                    </span> AGENDA DE CITAS</h1>
+            </div>
+        <div class="col-12">
+            <div id='wrap' class="text-dark">
+
+                <div id='calendar'></div>
+        
+                <div style='clear:both'></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+<script src="{% static 'bootstrap/js/calendar.js' %}"></script>
+{% endblock %}

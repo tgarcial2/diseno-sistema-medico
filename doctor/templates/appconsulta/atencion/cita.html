@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+
+
+<div class="container-fluid" id="inicio">
+    <div class="row">
+        <div class="card col-s12 col-md-6">
+            <form class=" form-group">
+                <fieldset>
+                    <legend> <span class="material-icons">
+                            supervisor_account
+                        </span>Nueva Cita Médica</legend>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Nombres:</label>
+                            <input type="text" class="form-control" placeholder="nombres">
+                        </div>
+                        <div class="col form-group">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control" placeholder="estado civil">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Fecha Cita:</label>
+                            <input type="datetime-local" class="form-control">
+                        </div>
+                        <div class="col form-group">
+                            <label>Dirección:</label>
+                            <input type="text" class="form-control" placeholder="direccion">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Fecha Nacimiento:</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col form-group">
+                            <label>Telefono:</label>
+                            <input type="text" class="form-control" placeholder="telefono">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Tipo de Consulta:</label>
+                            <input type="text" class="form-control" placeholder="tipo consulta">
+                        </div>
+                        <div class="col form-group">
+                            <label>Valor:</label>
+                            <input type="number" class="form-control" value="0">
+                        </div>
+                    </div>
+                   
+                </fieldset>
+                <div class="form-group form-inline">
+                    <label class="col-sm-6 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-sm"> Registrar</button>
+                        <a href="#" class="btn btn-danger btn-sm">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-s12 col-md-6">
+            <table class="table table-hover table-striped mt-3">
+
+                <thead class="bg-info text-dark">
+
+                    <tr>
+                        <th scope="col">Doctor</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Consultorio</th>
+                        <th scope="col">Cita</th>
+                        <th scope="col">Tipo Consulta</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="7">
+                            <input type="text" class="form-control" placeholder="buscar">
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <td>Mauricio Correa</td>
+                        <td>Ana Moreno</td>
+                        <td>Consulting12</td>
+                        <td>04/09/2020 21:51</td>
+                        <td>Pediatria</td>
+                        <td>$20</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mauricio Correa</td>
+                        <td>Pedro Moreno</td>
+                        <td>Consulting13</td>
+                        <td>04/09/2020 21:51</td>
+                        <td>RayosX</td>
+                        <td>$30</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mauricio Correa</td>
+                        <td>Michael Moreno</td>
+                        <td>Consulting13</td>
+                        <td>04/09/2020 21:51</td>
+                        <td>Electrocardiograma</td>
+                        <td>$10</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

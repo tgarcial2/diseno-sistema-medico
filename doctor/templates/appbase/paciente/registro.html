@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+
+
+<div class="container" id="inicio">
+    <div class="row">
+        <div class="card col-s12 col-md-12">
+            <form class=" form-group" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset>
+
+                    <legend> <span class="material-icons">
+                            supervisor_account
+                        </span> Registro de Pacientes</legend>
+                        <div class="card-body">
+                            <div id= "conten-vista" class="col form-group">
+                            {% if POST %}
+                            <img width="20%" height="50%" class="img-responsive" src="{% static 'imagenes/sinfoto.jpg' %}" alt="perfil">
+                           {% else %}
+                           <img width="20%" height="50%" class="img-responsive" src="{{form.instance.foto.url}}" alt="perfil">
+                           {% endif %}
+                            </div>
+                          {{form.foto}}
+                        </div>
+                        {% if form.errors %}
+                        <div class="col-md-8 alert alert-danger" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                         <strong>{{form.errors}}</strong>
+                        </div>
+                        {% endif %}
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Nombres:</label>
+                             {{form.nombre}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Apellidos:</label>
+                           {{form.apellido}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Cédula:</label>
+                          {{form.cedula}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Estado Civil:</label>
+                          {{form.civil}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Sexo:</label>
+                            {{form.sexo}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Profesión:</label>
+                          {{form.profesion}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Titulo:</label>
+                            {{form.titulo}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Fecha Nacimiento:</label>
+                                {{form.nacimiento}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Telefono:</label>
+                           {{form.telefono}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Provincia:</label>
+                                {{form.provincia}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Ciudad:</label>
+                           {{form.ciudad}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Dirección:</label>
+                         {{form.direccion}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Correo Electrónico:</label>
+                            {{form.email}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Tipo de Sangre:</label>
+                         {{form.sangre}}
+                        </div>
+                        <div class="col form-group">
+                            <label>Hijos:</label>
+                           {{form.hijos}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Estado:</label>
+                         {{form.estado}}
+                    </div>
+                </fieldset>
+                <div class="form-group form-inline">
+                    <label class="col-sm-6 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-sm"> Registrar</button>
+                        <a href="{% url 'base:paciente' %}" class="btn btn-danger btn-sm">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    $(document).ready(function(){
+    function vista_previa(entrada) {
+      if (entrada.files && entrada.files[0]) {
+        let fr = new FileReader();
+        fr.onload = function(evt){
+          $("#conten-vista").html("<img  width=200px height=auto src="+evt.target.result+" />");
+        }
+        fr.readAsDataURL(entrada.files[0]);
+      }
+    }
+        $("#id_foto").change(function(){
+            let filename = $("#id_foto").val();
+            if (filename=='') {
+                $("#conten-vista").html("<img  width=200px height=auto src='{% static 'imagenes/sinfoto.jpg' %}' />");
+            }else{
+                vista_previa(this);
+            }
+        });
+    
+    });
+    </script>
+{% endblock %}

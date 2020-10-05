@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+
+
+<div class="container-fluid" id="inicio">
+    <div class="row">
+      
+        <div class="col-s12 col-md-12">
+            <div class="card-header bg-light text-dark ">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 id="titulo" class="font-weight-bold" >CONSULTA DE USUARIOS <span class="material-icons">
+                            supervisor_account
+                        </span></h3>
+                    </div>
+                    <div class="col-md-4 ">
+                        <button class="btn btn-primary float-right" data-toggle="modal"
+                        data-target="#modalusuario">Nuevo Registro</button>
+                    </div>
+    
+                </div>
+            </div>
+            <table class="table table-hover table-striped mt-3">
+
+                <thead class="bg-info text-dark">
+
+                    <tr>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="6">
+                            <input type="text" class="form-control" placeholder="buscar">
+                        </th>
+
+                    </tr>
+                    <tr>
+                         <td><img src="{% static 'imagenes/login-user.png' %}"
+                                        class="img-thumbnail rounded-circle" width="40px">
+                                </td>
+                        <td>Mirian Cabril</td>
+                        <td>Femenino</td>
+                        <td>mirian@ecuador.gob.ec</td>
+                        <td><span href="#" class="badge badge-pill badge-success">Activo</span></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="{% static 'imagenes/login-user.png' %}"
+                            class="img-thumbnail rounded-circle" width="40px">
+                    </td>
+                        <td>Patricio Lucas</td>
+                        <td>Masculino</td>
+                        <td>patricio@ecuador.gob.ec</td>
+                        <td><span href="#" class="badge badge-pill badge-danger">Inactivo</span></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="{% static 'imagenes/login-user.png' %}"
+                            class="img-thumbnail rounded-circle" width="40px">
+                    </td>
+                        <td>Ana Guzman</td>
+                        <td>Femenino</td>
+                        <td>anaguzman@ecuador.gob.ec</td>
+                        <td><span href="#" class="badge badge-pill badge-success">Activo</span></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalusuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class=" form-group">
+                    <fieldset>
+    
+                        <legend> <span class="material-icons">
+                                supervisor_account
+                            </span> Registro de Usuario</legend>
+                            <div class="card-body">
+                                <div class="col form-group">
+                                 <img width="20%" height="30%" class="rounded-circle img-responsive" src="{% static 'imagenes/clientes.png' %}" alt="perfil">
+                                </div>
+                                <input type="file" class="btn btn-warning btn-sm">
+                            </div>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label>Nombres Completos:</label>
+                                <input type="text" class="form-control" placeholder="nombres">
+                            </div>
+                            <div class="col form-group">
+                                <label>Sexo:</label>
+                                <input type="text" class="form-control" placeholder="usuario">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label>Correo Electrónico:</label>
+                                <input type="text" class="form-control" placeholder="correo electronico">
+                            </div>
+                            <div class="col form-group">
+                                <label>Usuario:</label>
+                                <input type="text" class="form-control" placeholder="sexo">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label>Contraseña:</label>
+                                <input type="password" class="form-control" placeholder="contraseña">
+                            </div>
+                            <div class="col form-group">
+                                <label>Confirmar Contraseña:</label>
+                                <input type="password" class="form-control" placeholder="confirmar contraseña">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label>Estado:</label>
+                                <input type="checkbox" checked>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm">Guardar</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

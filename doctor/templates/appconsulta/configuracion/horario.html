@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+<div class="container-fluid" id="inicio">
+    <div class="row">
+        <div class="card col-s12 col-md-6">
+            <form class=" form-group">
+                <fieldset>
+
+                    <legend> <span class="material-icons">
+                        access_time
+                        </span> Horario de Atención</legend>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Dia:</label>
+                           <select name="" id="" class="form-control">
+                               <option value="">Domingo</option>
+                               <option value="">Lunes</option>
+                           </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Desde:</label>
+                            <input type="time" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Hasta:</label>
+                            <input type="time" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Estado:</label>
+                            <input type="checkbox" checked>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group form-inline">
+                    <label class="col-sm-6 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-sm"> Registrar</button>
+                        <a href="#" class="btn btn-danger btn-sm">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-s12 col-md-6">
+            <table class="table table-hover table-striped mt-3">
+
+                <thead class="bg-info text-dark">
+
+                    <tr>
+                        <th scope="col">Día</th>
+                        <th scope="col">Desde</th>
+                        <th scope="col">Hasta</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Domingo</td>
+                        <td>07:00</td>
+                        <td>18:00</td>
+                        <td><a href="#" class="badge badge-pill badge-success">Activo</a></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>07:00</td>
+                        <td>18:00</td>
+                        <td><a href="#" class="badge badge-pill badge-success">Activo</a></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

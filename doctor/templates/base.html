@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Medical</title>
+    {% load static%}
+    <!-- datepicker-->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+    {% block headcss %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+    <header>
+        {% block header %}
+
+        {% endblock %}
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+       
+    </main>
+    <footer class="bg-dark">
+        <div class="container text-center text-md-left">
+            <div class="row">
+              <div class="col-md-3 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Integrantes</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#!">Tamara Pazmiño</a>
+                  </li>
+                  <li>
+                    <a href="#!">Tahiri Garcia</a>
+                  </li>
+                  <li>
+                    <a href="#!">Gabriela Loyola</a>
+                  </li>
+                  <li>
+                    <a href="#!">Edison Bueno</a>
+                  </li>
+                </ul>
+              </div>
+              <hr class="clearfix w-100 d-md-none">
+              <div class="col-md-3 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Tecnologias Utilizadas</h5>  
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#!">Python</a>
+                  </li>
+                  <li>
+                    <a href="#!">Framework Django</a>
+                  </li>
+                  <li>
+                    <a href="#!">Bootstrap 4</a>
+                  </li>
+                </ul>
+              </div>
+              <hr class="clearfix w-100 d-md-none">
+              <div class="col-md-3 mx-auto">
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-white">Información</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#">tpazminon@unemi.edu.ec</a>
+                    <a href="#!">tgarcial2@unemi.edu.ec</a>
+                    <a href="#!">gloyolas2@unemi.edu.ec</a>
+                    <a href="#!">ebuenop@unemi.edu.ec</a>
+                  </li>
+                </ul>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright text-center py-3"><strong>© 2020 Copyright:</strong>
+          </div>
+    </footer>
+
+    {% block frmodal %}
+
+    {% endblock %}
+
+
+
+    <!-- En el orden jQuery, Popper.js y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+
+
+    {% block js %}
+
+    {% endblock %}
+
+    {% block jscript %}
+
+    {% endblock %}
+</body>
+
+</html>

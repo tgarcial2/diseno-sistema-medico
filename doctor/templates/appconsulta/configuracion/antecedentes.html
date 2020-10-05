@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+<div class="container-fluid" id="inicio">
+    <div class="row">
+        <div class="card col-s12 col-md-6">
+            <form class=" form-group">
+                <fieldset>
+
+                    <legend> <span class="material-icons">
+                        assignment_ind
+                        </span> Antecedentes</legend>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Grupo de Antecedentes:</label>
+                           <select name="" id="" class="form-control">
+                               <option value="">Patológicos</option>
+                               <option value="">No Patológicos</option>
+                           </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Antecedentes:</label>
+                           <input type="text" name="" id="" class="form-control">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group form-inline">
+                    <label class="col-sm-6 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-sm"> Registrar</button>
+                        <a href="#" class="btn btn-danger btn-sm">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-s12 col-md-6">
+            <table class="table table-hover table-striped mt-3">
+
+                <thead class="bg-info text-dark">
+
+                    <tr>
+                        <th scope="col">Grupo de Antecedentes</th>
+                        <th scope="col">Antecedentes</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Patológicos</td>
+                        <td>Familiar</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>No Patológicos</td>
+                        <td>Familiar</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

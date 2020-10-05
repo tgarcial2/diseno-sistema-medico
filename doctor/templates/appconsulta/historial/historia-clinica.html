@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+
+
+<div class="container" id="inicio">
+    <div class="row">
+        <div class="card col-s12 col-md-12 form-group">
+            <form class="form-group">
+                <fieldset>
+                    <legend> <span class="material-icons">
+                            supervisor_account
+                        </span> Historia Clínica - Información del Paciente</legend>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Nombres:</label>
+                            <input type="text" class="form-control" placeholder="nombres">
+                        </div>
+                        <div class="col form-group">
+                            <label>Cédula:</label>
+                            <input type="text" class="form-control" placeholder="cedula">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Fecha Nacimiento:</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col form-group">
+                            <label>Nacionalidad:</label>
+                            <input type="text" class="form-control" placeholder="nacionalidad">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Dirección:</label>
+                            <input type="text" class="form-control" placeholder="direccion">
+                        </div>
+                        <div class="col form-group">
+                            <label>Celular:</label>
+                            <input type="text" class="form-control" placeholder="celular">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Tipo de Sangre:</label>
+                            <input type="text" class="form-control" placeholder="tipo de sangre">
+                        </div>
+                        <div class="col form-group">
+                            <label>Correo Electrónico:</label>
+                            <input type="email" class="form-control" placeholder="correo electrónico">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-s12 col-md-6">
+            <form class="form-horizontal form-material">
+                <fieldset>
+                    <legend>Control  <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modalControl" >
+                        <span class="material-icons">
+                        loupe
+                        </span></button></legend>
+                   
+                    <div class="row">
+                        <div class="col form-group">
+                            <img src="{% static 'imagenes/estatura.png' %}" alt="">
+                            <label class="">Estatura</label>
+                        </div>
+                        <div class="col form-group">
+                            <input type="text" disabled value="1.80m" class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <img src="{% static 'imagenes/peso.png' %}" alt="">
+                            <label class="">Peso</label>
+                        </div>
+                        <div class="col form-group">
+                            <input type="text" disabled value="80kg" class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <img src="{% static 'imagenes/masa.png' %}" alt="">
+                            <label class="">Masa Corporal</label>
+                        </div>
+                        <div class="col form-group">
+                            <input type="text" disabled value="24.69kg/m2" class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <img src="{% static 'imagenes/temperatura.png' %}" alt="">
+                            <label class="">Temperatura</label>
+                        </div>
+                        <div class="col form-group">
+                            <input type="text" disabled value="37.5C" class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <img src="{% static 'imagenes/frecuencia-cardiaca.png' %}" alt="">
+                            <label class="">Frecuencia Card.</label>
+                        </div>
+                        <div class="col form-group">
+                            <input type="text" disabled value="80bpm" class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <img src="{% static 'imagenes/grasa.png' %}" alt="">
+                            <label class="">Porc Grasa Corp.</label>
+                        </div>
+                        <div class="col form-group">
+                            <input type="text" disabled value="20%" class="col-md-12">
+                        </div>
+                    </div>
+        </fieldset>
+        </form>
+    </div>
+    <div class="col-s12 col-md-6">
+        <form class="form-group">
+            <fieldset>
+                <legend> <span class="material-icons">
+                        supervisor_account
+                    </span> Opciones</legend>
+                <div class="row">
+                    <div class="col form-group">
+                        <div class="form-control badge-success">
+                            <div class="col-sm12 col-md-12">
+                                <label for="diagnostico"> DIAGNOSTICO:</label>
+                                <button style="float: right;" class="form-group btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#mD" >agregar</button>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <div class="form-control badge-success">
+                            <div class="col-sm12 col-md-12">
+                                <label for="diagnostico"> ANTECEDENTES:</label>
+                                <button style="float: right;" class="form-group btn btn-primary btn-sm">agregar</button>
+                            </div>
+                          
+                           
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <div class="form-control badge-success">
+                            <div class="col-sm12 col-md-12">
+                                <label for="diagnostico"> MEDICAMENTOS:</label>
+                                <button style="float: right;" class="form-group btn btn-primary btn-sm">agregar</button>
+                            </div>
+                          
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="modalControl" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Control de Paciente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-group">
+                <fieldset>
+                    <legend>Información del Paciente</legend>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Estatura:</label>
+                            <input type="text" class="form-control" placeholder="estatura">
+                        </div>
+                        <div class="col form-group">
+                            <label>Peso:</label>
+                            <input type="text" class="form-control" placeholder="peso">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Masa Corporal:</label>
+                            <input type="text" class="form-control" placeholder="masa corporal">
+                        </div>
+                        <div class="col form-group">
+                            <label>Temperatura:</label>
+                            <input type="text" class="form-control" placeholder="temperatura">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Frecuencia Card.:</label>
+                            <input type="text" class="form-control" placeholder="frecuencia">
+                        </div>
+                        <div class="col form-group">
+                            <label>Porcentaje Grasa:</label>
+                            <input type="text" class="form-control" placeholder="porcentaje">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-sm">Guardar</button>
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+</div>
+  <div class="modal fade" id="mD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Diagnostico</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-group"></form>
+                <fieldset>
+                    <legend>Información de Diagnostico</legend>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Paciente:</label>
+                            <input type="text" class="form-control" placeholder="nombre de paciente">
+                        </div>
+                        <div class="col form-group">
+                            <label>Médico:</label>
+                            <input type="text" class="form-control" placeholder="medico">
+                        </div>
+                    </div>
+                 
+                    <div class="row">
+                            <h3 class="form-group">Descripcion de Atención Médica</h3>
+                            <div class="col form-group">
+                                <h4>Ingreso:</h4>
+                              <textarea name="ingreso" id="" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="col form-group">
+                                <h4>Resultado:</h4>
+                                <textarea name="resultado" id="" cols="30" rows="5"></textarea>
+                            </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-sm">Guardar</button>
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

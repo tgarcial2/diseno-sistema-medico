@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+<div class="container-fluid"  id="inicio">
+        <div class="row">
+            <div class="col-5 align-self-center">
+                <h2 class="text-success page-title">RECETA <span class="material-icons">
+                    content_paste
+                    </span></h2>
+            </div>
+        </div>
+    <div class="row">
+        <!-- Column -->
+        <div class="col-lg-12 col-xlg-12 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material">
+                        <fieldset>
+                            <legend class="text-warning">Información de Paciente <span class="material-icons">
+                                how_to_reg
+                                </span></legend>
+                              <div class="row">
+                                <div class="col form-group">
+                                    <label class="">Paciente:</label>
+                                    <div class="form-group">
+                                        <select name="paciente-search" id="" class="form-control">
+                                         
+                                            <option value="">Tamara Pazmiño...</option>
+                                            <option value="">Tahiri Garcia...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col form-group">
+                                    <label>Sexo:</label>
+                                    <div >
+                                        <input type="text"  placeholder="sexo" class="form-control form-control-line" disabled>
+                                    </div>
+                                </div>
+                                <div class="col form-group">
+                                    <label>Dirección:</label>
+                                    <div >
+                                        <input type="text"  placeholder="dirección domiciliaria" class="form-control form-control-line" disabled>
+                                    </div>
+                                </div>
+                              </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="text-warning">Información de Receta <span class="material-icons">
+                            content_paste
+                            </span></legend>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label>Motivo:</label>
+                                <div >
+                                    <input type="text" placeholder="motivo" class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="col form-group">
+                                <label>Sintoma:</label>
+                                <div>
+                                    <select name="paciente-search" id="" class="form-control">
+                                        <option value="">Dolor de Cabeza</option>
+                                        <option value="">Fiebre</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label>Gabinete:</label>
+                                <div >
+                                    <select name="paciente-search" id="" class="form-control" multiple="3">
+                                        <option value="">Exámen de Ecografía</option>
+                                        <option value="">Exámen de Torax</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col form-group">
+                                <label>Diagnostico:</label>
+                                <div>
+                                    <select name="paciente-search" id="" class="form-control" multiple="3">
+                                        <option value="">Gastritis</option>
+                                        <option value="">Denge</option>
+                                        <option value="">Alergia</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col form-group">
+                                <label>Exploración:</label>
+                                <div >
+                                 <textarea name="exploracion" id="" cols="55" rows="8" placeholder="Escriba..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col form-group">
+                                <label>Instrucciones:</label>
+                                <div>
+                                   <textarea name="instrucciones" id="" cols="55" rows="8" placeholder="Escriba las instrucciones..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </fieldset>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button class="btn btn-info">Guardar</button>
+                                <button class="btn btn-danger">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-xlg-12 col-md-12">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-warning">Instrucciones de Medicamentos <span class="material-icons">
+                            business_center
+                            </span></h4>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col form-group">
+                                    <label class="">Medicamento:</label>
+                                    <div class="form-group">
+                                        <select name="paciente-search" id="" class="form-control">
+                                          
+                                            <option value="">Aspirina 500gr</option>
+                                            <option value="">Umbral 500gr</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col form-group">
+                                    <label>Cantidad:</label>
+                                    <div >
+                                        <input type="number"  value="0" class="form-control form-control-line">
+                                    </div>
+                                </div>
+                                <div class="col form-group">
+                                    <label>Dosis:</label>
+                                    <div >
+                                        <select name="paciente-search" id="" class="form-control">
+                                         
+                                            <option value="">2 diarias</option>
+                                            <option value="">1/2 al día</option>
+                                        </select>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col form-group">
+                                    <label>Frecuencia:</label>
+                                    <div >
+                                        <select name="paciente-search" id="" class="form-control">
+                                         
+                                            <option value="">Después de las comidas</option>
+                                            <option value="">Antes de las comidas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col form-group">
+                                    <label>Duración:</label>
+                                    <div >
+                                        <select name="paciente-search" id="" class="form-control">
+                                         
+                                            <option value="">30 días</option>
+                                            <option value="">25 días</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <button type="button" class="btn btn-primary btn-sm"> Agregar Medicamento</button>
+                                        
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped mt-3">
+                            <thead class="bg-info text-dark">
+                                <tr>
+                                    <th class="border-top-0">Medicamento</th>
+                                    <th class="border-top-0">Cantidad</th>
+                                    <th class="border-top-0">Dosis</th>
+                                    <th class="border-top-0">Frecuencia</th>
+                                    <th class="border-top-0">Duración</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                    <td class="txt-oflo">Aspirina 500gr</td>
+                                    <td class="txt-oflo">8</td>
+                                    <td class="txt-oflo">2 diaria</td>
+                                    <td><span class="font-medium">después de las comidas</span></td>
+                                    <td><span class="font-medium">40 días</span></td>
+                                    <td> <button type="button" class="btn btn-danger btn-sm">Eliminar</button> </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td class="txt-oflo">Amoxicilina 100gr</td>
+                                    <td class="txt-oflo">5</td>
+                                    <td class="txt-oflo">1/2 diaria</td>
+                                    <td><span class="font-medium">después de las comidas</span></td>
+                                    <td><span class="font-medium">10 días</span></td>
+                                    <td> <button type="button" class="btn btn-danger btn-sm"> Eliminar</button> </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td class="txt-oflo">Nimesulid 100gr</td>
+                                    <td class="txt-oflo">10</td>
+                                    <td class="txt-oflo">3 diarias</td>
+                                    <td><span class="font-medium">después de las comidas</span></td>
+                                    <td><span class="font-medium">25 días</span></td>
+                                    <td> <button type="button" class="btn btn-danger btn-sm"> Eliminar</button> </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td class="txt-oflo">Umbral 500gr</td>
+                                    <td class="txt-oflo">14</td>
+                                    <td class="txt-oflo">2 diaria</td>
+                                    <td><span class="font-medium">antes de las comidas</span></td>
+                                    <td><span class="font-medium">10 días</span></td>
+                                    <td> <button type="button" class="btn btn-danger btn-sm"> Eliminar</button> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+
+
+{% endblock %}

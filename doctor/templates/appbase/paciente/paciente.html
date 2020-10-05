@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+
+
+<div class="container-fluid" id="inicio">
+    <div class="row">
+      
+        <div class="col-s12 col-md-12">
+            <div class="card-header bg-light text-dark ">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 id="titulo" class="font-weight-bold" >CONSULTA DE PACIENTES <span class="material-icons">
+                            supervisor_account
+                        </span></h3>
+                    </div>
+                    <div class="col-md-4 ">
+                        <a href="{% url 'base:pac_r' %}" class="btn btn-primary float-right">Nuevo Registro</a>
+                    </div>
+    
+                </div>
+            </div>
+            <table class="table table-hover table-striped mt-3">
+
+                <thead class="bg-info text-dark">
+
+                    <tr>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Género</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Tipo de Sangre</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Historia Clínica</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="8">
+                            <input type="text" class="form-control" placeholder="buscar">
+                        </th>
+
+                    </tr>
+                   {% for paciente in pacientes %}
+                        <tr>
+                            {% if paciente.foto %}
+                            <td><img src="{{paciente.foto.url}}" class="img-thumbnail rounded-circle" width="40px">
+                            </td>
+                            {% else %}
+                            <td><img src="{% static 'imagenes/sinfoto.png' %}"class="img-thumbnail rounded-circle" width="40px">
+                            </td>
+                            {% endif %}
+                            <td>{{paciente.nombre}} {{paciente.apellido}}</td>
+                          
+                                {% if paciente.sexo == 'M' %}
+                                <td class="text-center"><span
+                                        class="badge badge-pill badge-success">Masculino</span>
+                                </td>
+                                {% else %}
+                                <td class="text-center"><span
+                                        class="badge badge-pill badge-danger">Femenino</span>
+                                </td>
+                                {% endif %}
+                          
+                            <td>{{paciente.direccion}}</td>
+                            <td>{{paciente.email}}</td>
+                            <td><span
+                                class="badge badge-pill badge-success">{{paciente.sangre}}</span></td>
+                            <td>{{paciente.ciudad}}</td>
+                            <td><a href="#" class="badge badge-pill badge-warning">ver historia</a></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                    <div class="btn-group" role="group">
+                                        <button id="btnGroupDrop{{paciente.id}}" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop{{paciente.id}}">
+                                            <a class="dropdown-item" href="{% url 'base:act_paciente' paciente.id %}">Editar</a>
+                                            <a class="dropdown-item" href="#">Eliminar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                      <tr> <td><h3 class="text-danger">¡No existen registros...!</h3></td></tr>
+                       
+                   {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

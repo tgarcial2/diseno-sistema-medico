@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Médico</title>
+{% load static%}
+<!-- datepicker-->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+<!-- Bootstrap CSS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/estilo-login.css' %}">
+</head>
+<body>
+<div class="login-form">
+    <form action="" method="post">
+        <div>
+            <img src="{% static 'imagenes/login-user.png' %}" alt="usuario">
+        </div>
+        <h2 class="text-center">Iniciar Sessión</h2>   
+        <div class="form-group has-error">
+        	<input type="text" class="form-control" name="username" placeholder="" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="" required="required">
+        </div>        
+        <div class="form-group">
+            <a href="{% url 'inicio' %}" class="btn btn-primary btn-lg btn-block">Entrar</a>
+        </div>
+        <p><a href="#">¿Has olvidado la contraseña?</a></p>
+    </form>
+    <p class="text-dark text-center ">¿No tienes cuenta?  <a class="text-dark" href="{% url 'registrar' %}"><strong>Registrate aquí</strong></a></p>
+</div>
+</body>
+  <!-- En el orden jQuery, Popper.js y Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+
+</html>

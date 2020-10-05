@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+{% block main %}
+{% load static %}
+
+
+<div class="container-fluid" id="inicio">
+    <div class="row">
+        <div class="card col-s12 col-md-6">
+            <form class=" form-group">
+                <fieldset>
+
+                    <legend> <span class="material-icons">
+                            supervisor_account
+                        </span> Registro de Doctores</legend>
+                        <div class="card-body">
+                            <div class="col form-group">
+                             <img width="20%" height="30%" class="rounded-circle img-responsive" src="{% static 'imagenes/clientes.png' %}" alt="perfil">
+                            </div>
+                            <input type="file" class="btn btn-success btn-sm">
+                        </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Nombres Completos:</label>
+                            <input type="text" class="form-control" placeholder="nombres">
+                        </div>
+                        <div class="col form-group">
+                            <label>Especialidad:</label>
+                            <input type="text" class="form-control" placeholder="especialidad">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Cédula:</label>
+                            <input type="text" class="form-control" placeholder="cedula">
+                        </div>
+                        <div class="col form-group">
+                            <label>Sexo:</label>
+                            <input type="text" class="form-control" placeholder="sexo">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Fecha Nacimiento:</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col form-group">
+                            <label>Telefono:</label>
+                            <input type="text" class="form-control" placeholder="telefono">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Dirección:</label>
+                            <input type="text" class="form-control" placeholder="direccion">
+                        </div>
+                        <div class="col form-group">
+                            <label>Nacionalidad:</label>
+                            <input type="text" class="form-control" placeholder="nacionalidad">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label>Tipo de Sangre:</label>
+                            <input type="text" class="form-control" placeholder="tipo de sangre">
+                        </div>
+                        <div class="col form-group">
+                            <label>Correo Electrónico:</label>
+                            <input type="email" class="form-control" placeholder="correo electrónico">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group form-inline">
+                    <label class="col-sm-6 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-sm"> Registrar</button>
+                        <a href="#" class="btn btn-danger btn-sm">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-s12 col-md-6">
+            <table class="table table-hover table-striped mt-3">
+
+                <thead class="bg-info text-dark">
+
+                    <tr>
+                        <th scope="col">Doctor</th>
+                        <th scope="col">Especialidad</th>
+                        <th scope="col">Dni</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="6">
+                            <input type="text" class="form-control" placeholder="buscar">
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <td>Rafael Correa Delgado Moreno</td>
+                        <td>Ginecologo</td>
+                        <td>081811111</td>
+                        <td>Guayaquil</td>
+                        <td><a href="#" class="badge badge-pill badge-success">Activo</a></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rafael Correa</td>
+                        <td>Pediatra</td>
+                        <td>11111111111</td>
+                        <td>Milagro</td>
+                        <td><a href="#" class="badge badge-pill badge-danger">Inactivo</a></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rafael Correa</td>
+                        <td>Dermatologo</td>
+                        <td>0644444444</td>
+                        <td>Babahoyo</td>
+                        <td><a href="#" class="badge badge-pill badge-success">Accion</a></td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accion</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
